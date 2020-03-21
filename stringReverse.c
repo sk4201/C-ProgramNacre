@@ -1,26 +1,30 @@
 #include<stdio.h>
+void strrev1(char *[] , int);
 int main()
 {
 	char *s[]={"PINK","WHITE","BLUE","GREEN"};
 	int t,i,j;
-	for(i=0;i<strlen(s);i++)
-	{
-		j=0;
-		k=strlen(s[i])-1;
-		while(j<k)
-		{
-			t=*s+i;
-			*s+i=*s+j;
-			*s+j=t;
-			i++;
-			j--;
-		}
-		*s+i;
-			
-		for(i=0;i<strlen(s);i++)
-		{
-				printf("%d\n",*(s+i));	
-		}
+	int n = sizeof(s)/sizeof(s[0]);
+	strrev1(&s , n);
+	for(i=0;i<n;i++){
+	printf("%s ",s[i]);
 	}
 	return 0;
 }
+	void strrev1(char *s[] , int n){
+		
+		int temp ; 
+		int i = 0;
+		int j = n-1;
+		for(i=0;i<n;i++){
+			while(i<j)
+				{
+				temp = s[i];
+				s[i] = s[j];
+				s[j] = temp;
+				i++;
+				j--;		
+				}
+				
+	}
+	}
